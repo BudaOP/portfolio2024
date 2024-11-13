@@ -240,36 +240,40 @@ document.addEventListener("DOMContentLoaded", () => {
   function update(time) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Apply even more noticeable movements for each splash using sine and cosine
-    const topLeftX = 0.1 * canvas.width + 30 * Math.sin(time * 0.0012);
+    // Left-side splashes (remain the same)
+    const topLeftX = 0.15 * canvas.width + 30 * Math.sin(time * 0.0012);
     const topLeftY = 0.1 * canvas.height + 30 * Math.cos(time * 0.0013);
-
-    const topRightX = 0.85 * canvas.width + 25 * Math.cos(time * 0.0011);
-    const topRightY = 0.1 * canvas.height + 25 * Math.sin(time * 0.0014);
 
     const bottomLeftX = 0.1 * canvas.width + 35 * Math.sin(time * 0.0014);
     const bottomLeftY = 0.9 * canvas.height + 35 * Math.cos(time * 0.0012);
 
-    const bottomRightX = 0.7 * canvas.width + 30 * Math.cos(time * 0.0013);
-    const bottomRightY = 0.85 * canvas.height + 30 * Math.sin(time * 0.0012);
+    // Right-side splashes adjustments
+    const topRightX = 0.95 * canvas.width + 25 * Math.cos(time * 0.0011);
+    const topRightY = 0.2 * canvas.height + 25 * Math.sin(time * 0.0014);
 
-    // Draw each color splash with larger size and more noticeable movement
+    // Move bottom-right splash further left and make it smaller
+    const bottomRightX = 0.65 * canvas.width + 30 * Math.cos(time * 0.0013); // Moved further left
+    const bottomRightY = 0.8 * canvas.height + 30 * Math.sin(time * 0.0012);
+    const bottomRightWidth = 400; // Smaller width
+    const bottomRightHeight = 200; // Smaller height
+
+    // Draw each color splash with adjusted positions and sizes
     drawColorSplash(
       topLeftX,
       topLeftY,
-      500,
+      400,
       300,
       "rgba(63, 94, 251, 0.5)",
       "rgba(252, 70, 107, 0)"
-    ); // Top-left, much larger
+    ); // Top-left
     drawColorSplash(
       topRightX,
       topRightY,
-      350,
-      350,
+      450,
+      450,
       "rgba(131, 58, 180, 0.5)",
       "rgba(253, 29, 29, 0)"
-    );
+    ); // Top-right
     drawColorSplash(
       bottomLeftX,
       bottomLeftY,
@@ -277,15 +281,15 @@ document.addEventListener("DOMContentLoaded", () => {
       400,
       "rgba(252, 176, 69, 0.5)",
       "rgba(252, 70, 107, 0)"
-    );
+    ); // Bottom-left
     drawColorSplash(
       bottomRightX,
       bottomRightY,
-      800,
-      400,
+      bottomRightWidth,
+      bottomRightHeight,
       "rgba(160, 93, 134, 0.5)",
       "rgba(57, 34, 115, 0)"
-    );
+    ); // Bottom-right, adjusted
 
     window.requestAnimationFrame(update);
   }
