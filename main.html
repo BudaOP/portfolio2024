@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buda portfolio</title>
+    <script src="main.js"></script>
+
+    <!--========= CSS =========-->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <!--========= REMIXICONS =========-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css"
+    />
+
+    <!-- SWIPER -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css"
+    />
+  </head>
+  <body>
+    <div class="whole_container">
+      <header class="header" id="header">
+        <nav class="nav container">
+          <!-- <div class="nav__menu" id="nav-menu">
+            <i class="ri-apps-2-line"></i></div> -->
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">projects</a>
+            </li>
+            <!-- <li class="nav__item">
+                    <a href="#about" class="nav__link">about</a>
+                </li> -->
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">contact</a>
+            </li>
+            <li class="nav__item">
+              <a href="#cv" class="nav__link">Download CV</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!--========= MAIN =========-->
+      <section class="home grain" id="home">
+        <div class="home-text">
+          <h1 class="font1">
+            Creative Stuff With A <span class="font3">Taste</span> ✨
+          </h1>
+
+          <p class="font1">Software Engineer<br />UI/UX Designer</p>
+        </div>
+
+        <script
+          type="module"
+          src="https://unpkg.com/@splinetool/viewer@1.9.38/build/spline-viewer.js"
+        ></script>
+        <spline-viewer
+          url="https://prod.spline.design/YWQjJE9OofPOYJ0v/scene.splinecode"
+        ></spline-viewer>
+      </section>
+
+      <h1 id="projects">Projects</h1>
+      <div class="wrapper">
+        <div class="grid1"></div>
+        <div class="grid2">
+          Python, JavaScript, Flask
+          <h1>Medical helicopter game</h1>
+          <p>
+            the game incorporates real-world map import functionality, allowing
+            you to fly over accurately rendered landscapes based on actual
+            geographical data. Whether you're navigating through congested urban
+            areas or flying over rugged terrains, you'll need to rely on your
+            piloting skills and knowledge of the local terrain to safely reach
+            your destination.
+          </p>
+          <button>Explore more</button>
+        </div>
+        <div class="grid3">
+          2
+          <h1>Other project</h1>
+          <p>
+            the game incorporates real-world map import functionality, allowing
+            you to fly over accurately rendered landscapes based on actual
+            geographical data. Whether you're navigating through congested urban
+            areas or flying over rugged terrains, you'll need to rely on your
+            piloting skills and knowledge of the local terrain to safely reach
+            your destination.
+          </p>
+          <button>Explore more</button>
+        </div>
+        <div class="grid4"></div>
+        <!-- <div class="grid5">5</div> -->
+      </div>
+
+      <!-- ABOUT ME PAGE -->
+      <!-- <div id="aboutme">
+<h1>About me</h1>
+<p>the game incorporates real-world map import functionality, allowing you to fly over accurately rendered landscapes based on actual geographical data. Whether you're navigating through congested urban areas or flying over rugged terrains, you'll need to rely on your piloting skills and knowledge of the local terrain to safely reach your destination.</p>
+</div> -->
+
+      <!-- CONTACT ME PAGE -->
+      <div class="contact" id="contact">
+        <h1>Contact me</h1>
+        <p>
+          the game incorporates real-world map import functionality, allowing
+          you to fly over accurately rendered landscapes based on actual
+          geographical data. Whether you're navigating through congested urban
+          areas or flying over rugged terrains, you'll need to rely on your
+          piloting skills and knowledge of the local terrain to safely reach
+          your destination.
+        </p>
+        <img src="img/mockups_tab.png" alt="" />
+      </div>
+    </div>
+    <div class="glassy-overlay"></div>
+    <canvas></canvas>
+  </body>
+</html>
