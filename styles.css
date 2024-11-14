@@ -468,8 +468,9 @@ section {
 /* Responsive Styling for Projects Section */
 @media (max-width: 1080px) {
   #projects {
-    padding-left: 5rem; /* Reduce left padding */
-    text-align: center; /* Center align for smaller screens */
+    padding-left: 5rem;
+    padding-bottom: 1rem;
+    text-align: center;
   }
 
   .wrapper {
