@@ -25,6 +25,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Get all navigation items
+  const navItems = document.querySelectorAll(".nav__item");
+
+  navItems.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      // Get the target section ID from data attribute
+      const targetSection = item.getAttribute("data-target");
+      const section = document.getElementById(targetSection);
+
+      // Scroll to the target section smoothly
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Prevent the URL from updating
+      event.preventDefault();
+    });
+  });
+});
+
 // CANVAS
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.querySelector("canvas");

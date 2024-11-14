@@ -167,11 +167,21 @@ spline-viewer {
 
 .nav__item {
   margin: 0 20px; /* Add spacing between links */
+  cursor: pointer;
 }
 
 .nav__link {
   text-decoration: none;
+  cursor: pointer;
   color: #ffffff; /* Link color */
+}
+
+.nav__item:hover {
+  cursor: pointer;
+}
+
+.nav__link:hover {
+  color: #ff6a3a; /* Link color */
 }
 
 /* Header Styling */
