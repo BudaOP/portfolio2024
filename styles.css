@@ -12,6 +12,17 @@
   --z-fixed: 100;
 }
 
+/* Canvas */
+/* Canvas Styling */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: -1; /* Sends the canvas to the background */
+}
+
 /* ========= FONTS ========= */
 @font-face {
   font-family: "SinkinSans";
@@ -115,12 +126,12 @@ button {
 }
 
 .whole_container {
-  position: absolute;
+  position: relative;
   top: 0;
   z-index: 100000;
 }
 
-/* SPLINE */
+/* SPLINE - Default styling for larger screens */
 .spline-container {
   width: 100%;
   max-width: 80vw; /* Limit the maximum width */
@@ -136,17 +147,26 @@ spline-viewer {
   object-fit: contain; /* Ensures the viewer maintains its aspect ratio */
 }
 
-/* ========= HEADER AND NAV ========= */
+/* Hide the spline viewer on screens smaller than 1080px */
+@media (max-width: 1080px) {
+  .spline-container {
+    display: none; /* Hide the 3D model on smaller screens */
+  }
+}
+
+/* NAVBAR */
 /* Reset some default styles for the list and links */
+/* Base styling for the navigation list */
 .nav__list {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex; /* Display links horizontally */
+  justify-content: center; /* Center links horizontally */
 }
 
 .nav__item {
-  display: inline;
-  margin: 0 20px; /* Add spacing between links if needed */
+  margin: 0 20px; /* Add spacing between links */
 }
 
 .nav__link {
@@ -154,7 +174,7 @@ spline-viewer {
   color: #ffffff; /* Link color */
 }
 
-/* Center the navigation links horizontally */
+/* Header Styling */
 .header {
   padding: 10px 20px;
   z-index: 1000;
@@ -162,16 +182,67 @@ spline-viewer {
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 10px;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
-
-  /* From https://css.glass */
   background: rgba(0, 0, 0, 0.221);
   border-radius: 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10.8px);
   -webkit-backdrop-filter: blur(10.8px);
+}
+
+/* Hamburger Menu for Mobile */
+#nav-toggle {
+  display: none; /* Hide the hamburger menu by default */
+  cursor: pointer;
+  font-size: 30px;
+  color: #fff;
+}
+
+/* Show Hamburger Menu on Mobile */
+@media (max-width: 950px) {
+  #nav-list {
+    display: none; /* Hide nav items by default on mobile */
+    flex-direction: column; /* Stack items vertically */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background for dropdown */
+    position: absolute;
+    top: 60px; /* Position it below the header */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%; /* Take up most of the screen width */
+    max-width: 400px; /* Wider max width */
+    min-width: 250px; /* Ensure a minimum width */
+    padding: 20px 0;
+    border-radius: 10px; /* Round the edges */
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for a floating effect */
+    transition: all 0.3s ease; /* Smooth transition when appearing */
+    overflow: hidden; /* Prevent text overflow */
+  }
+
+  #nav-list.active {
+    display: flex; /* Show the menu when active */
+  }
+
+  #nav-toggle {
+    display: block; /* Show hamburger icon */
+  }
+
+  .nav__item {
+    margin: 15px 0; /* Increase spacing between links */
+  }
+
+  .nav__link {
+    font-size: 1.3rem; /* Slightly larger font for readability */
+    color: #ffffff;
+    transition: color 0.3s ease; /* Smooth transition for link color */
+    display: block;
+  }
+
+  .nav__link:hover {
+    color: #fc4a1a; /* Highlight color on hover */
+  }
 }
 
 /* MAIN */
@@ -202,11 +273,74 @@ section {
   color: #f0efef;
 }
 
+/* Adjust title font size for medium screens */
+@media (max-width: 1080px) {
+  .home-text h1 {
+    font-size: 48px; /* Medium font size for larger screens */
+    text-align: center;
+  }
+}
+
+/* Further reduce font size for very small screens */
+@media (max-width: 480px) {
+  .home-text h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
+
 .home-text p {
   /* font-size: 30px; */
   font-weight: 700;
   line-height: 1.3;
   /* color: #f0efef; */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1080px) {
+  .home {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    padding: 40px 5%; /* Adjust padding */
+    height: auto; /* Adjust height to fit content */
+    padding-top: 80px;
+  }
+
+  .home-text h1 {
+    font-size: 42px; /* Reduce font size for smaller screens */
+    text-align: center; /* Center-align text on mobile */
+  }
+
+  .font5 {
+    font-size: 1.5rem; /* Adjust subheading font size */
+    text-align: center;
+  }
+
+  .intro-text {
+    font-size: 1.2rem; /* Smaller font for intro text */
+    text-align: center; /* Center-align on smaller screens */
+    line-height: 1.4; /* Slightly taller line-height for readability */
+  }
+
+  .home-text {
+    padding: 0 10%; /* Reduce horizontal padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-text h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .font5 {
+    font-size: 1.2rem; /* Adjust font size for very small screens */
+  }
+
+  .intro-text {
+    font-size: 1rem; /* Further reduce intro text size */
+  }
 }
 
 /* projects */
@@ -316,7 +450,7 @@ section {
   border-radius: 30px;
   padding: 0.6rem 1.5rem;
   cursor: pointer;
-  margin-top: 3rem; /* Adds spacing above the button */
+  margin-top: 1.5rem; /* Adds spacing above the button */
   width: 30%; /* Sets consistent width */
   height: 10%; /* Adjusts height automatically based on padding */
   transition: background-color 0.4s ease, color 0.4s ease; /* Smooth transition for background and color */
@@ -326,6 +460,104 @@ section {
 .explore-button:hover {
   background-color: #ffffff; /* Fill color on hover */
   color: #000000; /* Change text color on hover */
+}
+
+/* Responsive Styling for Projects Section */
+@media (max-width: 1080px) {
+  #projects {
+    padding-left: 5rem; /* Reduce left padding */
+    text-align: center; /* Center align for smaller screens */
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr; /* Switch to a single-column layout */
+    gap: 30px; /* Increase gap between items */
+  }
+
+  .wrapper .grid1,
+  .grid2,
+  .grid3,
+  .grid4,
+  .grid5,
+  .grid6 {
+    text-align: center; /* Center-align text within grid items */
+  }
+
+  .grid-text {
+    font-size: 1rem; /* Reduce font size for readability */
+  }
+
+  .explore-button {
+    width: 50%; /* Wider button for smaller screens */
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #projects {
+    padding-left: 2rem; /* Further reduce left padding */
+    padding-top: 2rem;
+    font-size: 1.5rem; /* Reduce title size */
+    text-align: center; /* Center-align title */
+  }
+
+  .wrapper {
+    width: 90%; /* Use more of the screen width */
+    gap: 40px; /* Increase gap between grid items */
+    padding: 0 1rem; /* Add horizontal padding */
+  }
+
+  .wrapper .grid1,
+  .grid2,
+  .grid3,
+  .grid4,
+  .grid5,
+  .grid6 {
+    text-align: center; /* Center-align text within grid items */
+  }
+
+  .grid-text {
+    font-size: 0.9rem; /* Further reduce font size for mobile */
+    line-height: 1.5;
+  }
+
+  .explore-button {
+    width: 70%; /* Make button take more space on mobile */
+    padding: 0.5rem 1rem; /* Adjust padding */
+    font-size: 0.8rem; /* Smaller font size for button */
+  }
+}
+
+@media (max-width: 480px) {
+  #projects {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    font-size: 1.2rem; /* Smaller title size */
+    text-align: center; /* Center-align title */
+  }
+
+  .wrapper {
+    gap: 50px; /* Further increase gap between items for clarity */
+  }
+
+  .wrapper .grid1,
+  .grid2,
+  .grid3,
+  .grid4,
+  .grid5,
+  .grid6 {
+    text-align: center; /* Center-align text within grid items */
+  }
+
+  .grid-text {
+    font-size: 0.8rem; /* Smaller font for very small screens */
+    line-height: 1.4;
+  }
+
+  .explore-button {
+    width: 100%; /* Full width for smallest screens */
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 /* CONTACT ME PAGE */
@@ -496,6 +728,13 @@ section {
   background-color: #f0f0f0;
   border-radius: 2px;
   animation: scroll-wheel 1.5s infinite;
+}
+
+/* Hide scroll-down on screens smaller than 1080px */
+@media (max-width: 1080px) {
+  .scroll-down {
+    display: none; /* Hide the scroll-down section */
+  }
 }
 
 /* Bouncing animation */
