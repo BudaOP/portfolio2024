@@ -51,6 +51,27 @@
   font-size: 0.9rem;
 }
 
+.font5 {
+  font-family: "SinkinSans", sans-serif;
+  font-size: 2rem;
+  margin-top: 30px;
+  color: #ffffff;
+
+  /* text-transform: uppercase;  */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.intro-text {
+  font-family: "SinkinSans", sans-serif;
+  font-size: 1.5rem; /* Smaller size */
+  color: #ffffff;
+  margin-top: 6px;
+  font-weight: 300; /* Lighter weight */
+  line-height: 1.3; /* Keep the line height the same */
+  color: #ffffff;
+}
+
 /* ========= BASE ========= */
 * {
   box-sizing: border-box;
@@ -182,10 +203,10 @@ section {
 }
 
 .home-text p {
-  font-size: 30px;
+  /* font-size: 30px; */
   font-weight: 700;
   line-height: 1.3;
-  color: #f0efef;
+  /* color: #f0efef; */
 }
 
 /* projects */
@@ -204,13 +225,13 @@ section {
   display: grid;
   grid-template-columns: repeat(2, minmax(50px, 1fr));
   grid-template-rows: repeat(3, auto);
-  gap: 20px;
+  gap: 30px;
 }
 
 .wrapper .grid1,
 .grid4 {
   padding: 20px;
-  /* background-color: #f0f0f0; */
+  background-color: #ffffff;
   text-align: center;
   border-radius: 10px;
   box-sizing: border-box;
@@ -219,18 +240,22 @@ section {
   overflow: hidden;
 }
 
-.grid1 {
-  /* background: url(img/mockups_tab.png); */
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s ease; /* Smooth zoom effect */
+.grid-text {
+  line-height: 1.7;
+}
 
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.32);
+.grid1 {
+  background-color: white;
+  background: url("img/jobscoutmockup.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10.8px);
   -webkit-backdrop-filter: blur(10.8px);
+
+  transition: transform 0.3s ease;
 }
 
 .grid1:hover {
@@ -246,9 +271,11 @@ section {
 }
 
 .grid4 {
-  background: url(img/Free-Laptop-Placing-on-Sofa-Website-Mockup.jpg);
+  background-color: white;
+  background-image: url("img/mockup-qrai.png");
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   transition: transform 0.3s ease; /* Smooth zoom effect */
 }
 
@@ -258,7 +285,8 @@ section {
 
 /* New grid5 styling (same as grid1 and grid4 for the image-based style) */
 .grid5 {
-  background: rgba(255, 255, 255, 0.32);
+  background: url("img/mockup-medihelipeli2.jpg") center center / cover
+    no-repeat;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10.8px);
@@ -296,7 +324,7 @@ section {
 
 /* Hover Effect */
 .explore-button:hover {
-  background-color: #d6d6d6; /* Fill color on hover */
+  background-color: #ffffff; /* Fill color on hover */
   color: #000000; /* Change text color on hover */
 }
 
@@ -432,3 +460,217 @@ section {
   backdrop-filter: blur(50px);
   pointer-events: none;
 }
+
+/* Scroll Down Section */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-family: "SinkinSans", sans-serif;
+  color: #f0f0f0;
+  text-align: center;
+  font-size: 0.9rem;
+  animation: bounce 1.5s infinite;
+}
+
+/* Mouse Icon */
+.mouse-icon {
+  width: 24px;
+  height: 40px;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.mouse-wheel {
+  width: 4px;
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 2px;
+  animation: scroll-wheel 1.5s infinite;
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -10px);
+  }
+}
+
+/* Mouse wheel animation */
+@keyframes scroll-wheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SCROLL BAR */
+/* Custom Scrollbar for WebKit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px !important; /* Thinner width */
+  height: 10px !important; /* Thinner height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+  opacity: 0.9 !important; /* Increase opacity for better visibility */
+  background: linear-gradient(
+    120deg,
+    rgba(252, 176, 69, 1),
+    rgba(255, 94, 58, 1)
+  ) !important; /* Orange-yellow gradient */
+  background-clip: content-box !important;
+  border: 2px solid transparent !important; /* Adjusted for thinner scrollbar */
+  border-radius: 8px !important; /* Rounded edges */
+  min-height: 24px !important;
+  min-width: 24px !important;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 136, 51, 1),
+    rgba(255, 213, 79, 1)
+  ) !important; /* Slightly brighter gradient on hover */
+  background-clip: content-box !important;
+  border: 2px solid transparent !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important; /* Transparent background */
+  border: none !important;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: rgba(
+    128,
+    128,
+    128,
+    0.15
+  ) !important; /* Light background on hover */
+}
+
+::-webkit-scrollbar-track:vertical:hover {
+  border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+::-webkit-scrollbar-track:horizontal:hover {
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Special Styles for Select Elements */
+select::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    120deg,
+    rgba(252, 176, 69, 1),
+    rgba(255, 94, 58, 1)
+  ) !important; /* Orange-yellow gradient for <select> scrollbar thumb */
+  border: 2px solid hsl(0, 0%, 92%) !important;
+  border-radius: 8px !important;
+}
+
+select::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 92%) !important;
+}
+
+select::-webkit-scrollbar-track:vertical,
+select::-webkit-scrollbar-track:horizontal {
+  border-top: none !important;
+  border-left: none !important;
+}
+
+/* Container for the image row */
+.image-row {
+  display: flex; /* Flex layout for horizontal alignment */
+  gap: 16px; /* Space between each image */
+  padding: 25px 50px 75px 770px;
+  max-width: 100%; /* Ensures the row can expand fully */
+  overflow-x: auto;
+}
+
+/* Tile styling */
+.tile {
+  width: 200px; /* Set a fixed width for each image */
+  height: 200px; /* Set a fixed height for each image */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Text overlay hidden by default */
+.tile p {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  width: 100%; /* Ensure text covers the full tile width */
+}
+
+/* Additional text styling */
+.tile p span {
+  font-size: 0.9em;
+  font-weight: normal;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Show text overlay on hover */
+.tile:hover p {
+  opacity: 1;
+}
+
+/* Specific styles for each tile with background images */
+.apollo {
+  background-image: url("img/apollo.png");
+}
+
+.Bubbl {
+  background-image: url("img/drinkgame.png");
+  background-position: bottom;
+}
+
+.dots {
+  background-image: url("img/dots.png");
+}
+
+/* Styling for the title */
+.silent-title {
+  font-family: "SinkinSans", sans-serif;
+  font-size: 1.5em;
+  color: #ffffff;
+  padding: 10px 10px 0px 770px;
+}
+
+// SCROLL UP BUTTON

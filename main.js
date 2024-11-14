@@ -7,6 +7,12 @@ window.onload = function () {
   }
 };
 
+// scroll down
+function scrollToProjects() {
+  const projectsSection = document.getElementById("projects");
+  projectsSection.scrollIntoView({ behavior: "smooth" });
+}
+
 /*=============== SHOW MENU ===============*/
 
 // random
