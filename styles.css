@@ -349,6 +349,7 @@ section {
   }
 
   .intro-text {
+    padding-bottom: 4rem;
     font-size: 1rem; /* Further reduce intro text size */
   }
 }
@@ -511,14 +512,8 @@ section {
   #projects {
     padding-left: 2rem; /* Further reduce left padding */
     padding-top: 2rem;
-    font-size: 1.5rem; /* Reduce title size */
+    font-size: 2rem; /* Reduce title size */
     text-align: center; /* Center-align title */
-  }
-
-  /* Optional: Adjust margin on canvas container if it's close to projects */
-  .canvas-container {
-    /* Assuming your canvas is in this container */
-    padding-bottom: 2rem; /* Adds spacing at the bottom of the canvas */
   }
 
   .wrapper {
@@ -570,7 +565,7 @@ section {
   #projects {
     padding-left: 1rem;
     padding-top: 1rem;
-    font-size: 1.2rem; /* Smaller title size */
+    font-size: 2rem; /* Smaller title size */
     text-align: center; /* Center-align title */
   }
 
@@ -703,13 +698,14 @@ section {
 /* Social Buttons (GitHub, LinkedIn, Mail Me) Styling */
 .social-button {
   font-family: "SinkinSans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 1rem;
   padding: 0.6rem 1.2rem;
   color: #f0f0f0;
   background: #333;
   border: 1px solid #f0f0f0;
-  border-radius: 30px;
+  border-radius: 20px;
   text-decoration: none;
+  white-space: nowrap;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -754,6 +750,11 @@ section {
   .contact-image {
     width: 100%;
   }
+
+  .social-button {
+    font-size: 0.75rem;
+    padding: 0.3rem 1rem;
+  }
 }
 
 /* random */
@@ -781,7 +782,7 @@ section {
 /* Scroll Down Section */
 .scroll-down {
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
