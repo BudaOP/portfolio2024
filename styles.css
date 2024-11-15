@@ -375,7 +375,7 @@ section {
 .wrapper .grid1,
 .grid4 {
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #3366ff;
   text-align: center;
   border-radius: 10px;
   box-sizing: border-box;
@@ -515,6 +515,12 @@ section {
     text-align: center; /* Center-align title */
   }
 
+  /* Optional: Adjust margin on canvas container if it's close to projects */
+  .canvas-container {
+    /* Assuming your canvas is in this container */
+    padding-bottom: 2rem; /* Adds spacing at the bottom of the canvas */
+  }
+
   .wrapper {
     width: 90%; /* Use more of the screen width */
     gap: 40px; /* Increase gap between grid items */
@@ -528,6 +534,24 @@ section {
   .grid5,
   .grid6 {
     text-align: center; /* Center-align text within grid items */
+  }
+
+  .wrapper .grid1,
+  .grid4,
+  .grid5 {
+    text-align: center; /* Center-align text within grid items */
+    width: 80%; /* Wider for smallest screens to fit nicely */
+    height: 200px; /* Further reduce height */
+    margin: 0 auto;
+  }
+
+  .wrapper .grid1,
+  .grid5 {
+    background-size: cover;
+  }
+
+  .wrapper .grid4 {
+    background-size: contain;
   }
 
   .grid-text {
@@ -679,7 +703,7 @@ section {
 /* Social Buttons (GitHub, LinkedIn, Mail Me) Styling */
 .social-button {
   font-family: "SinkinSans", sans-serif;
-  font-size: 1rem;
+  font-size: 0.75rem;
   padding: 0.6rem 1.2rem;
   color: #f0f0f0;
   background: #333;
